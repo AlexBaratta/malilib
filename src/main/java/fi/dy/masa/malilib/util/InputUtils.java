@@ -49,33 +49,22 @@ public class InputUtils
 
 	public static InputUtil.Key getDefaultKey(KeyBinding key)
 	{
-		return ((IMixinKeyBinding) key).malilib$getDefaultKey();
+		return ((IMixinKeyBinding) key).malilib_getDefaultKey();
 	}
 
 	public static InputUtil.Key getBoundKey(KeyBinding key)
 	{
-		return ((IMixinKeyBinding) key).malilib$getBoundKey();
+		return ((IMixinKeyBinding) key).malilib_getBoundKey();
 	}
 
 	public static KeyBinding.Category getCategory(KeyBinding key)
 	{
-		return ((IMixinKeyBinding) key).malilib$getCategory();
+		return ((IMixinKeyBinding) key).malilib_getCategory();
 	}
 
 	public static boolean isBound(KeyBinding key)
 	{
-		return ((IMixinKeyBinding) key).malilib$getBoundKey() != null && !((IMixinKeyBinding) key).malilib$getBoundKey().equals(InputUtil.UNKNOWN_KEY);
-	}
-
-	public static void bindKey(KeyBinding key, InputUtil.Key binding)
-	{
-		key.setBoundKey(binding);
-		KeyBinding.updateKeysByCode();
-	}
-
-	public static void resetKeybind(KeyBinding key)
-	{
-		key.setBoundKey(((IMixinKeyBinding) key).malilib$getDefaultKey());
-		KeyBinding.updateKeysByCode();
+		InputUtil.Key boundKey = ((IMixinKeyBinding) key).malilib_getBoundKey();
+		return boundKey != null && !boundKey.equals(InputUtil.UNKNOWN_KEY);
 	}
 }

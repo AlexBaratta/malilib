@@ -8,12 +8,12 @@ import org.spongepowered.asm.mixin.gen.Accessor;
 @Mixin(KeyBinding.class)
 public interface IMixinKeyBinding
 {
-	@Accessor("defaultKey")
-	InputUtil.Key malilib$getDefaultKey();
+    @Accessor("defaultKey")
+    InputUtil.Key malilib_getDefaultKey();
 
-	@Accessor("boundKey")
-	InputUtil.Key malilib$getBoundKey();
+    @Accessor("boundKey")
+    InputUtil.Key malilib_getBoundKey();
 
-	@Accessor("category")
-	KeyBinding.Category malilib$getCategory();
+    @Accessor("category")
+    KeyBinding.Category malilib_getCategory();
 }
